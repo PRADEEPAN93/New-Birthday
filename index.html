@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: rgb(192, 31, 57);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+      margin-top: 50px;
+      font-size: 3em;
+      text-shadow: 2px 2px #2dd6e2;
+    }
+
+    .btn {
+      margin-top: 40px;
+      padding: 15px 30px;
+      background-color: #056f99;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+    }
+
+    .message {
+      margin: 30px auto;
+      margin-top: 20px;
+      padding: 20px;
+      font-size: 1.5em;
+      color: #fff;
+      display: none;
+      max-width: 600px;
+      animation: fadeIn 2s ease forwards;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      width: 15px;
+      height: 15px;
+      background: #800546;
+      position: absolute;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      opacity: 0;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: #800346;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday! 🎉</h1>
+
+  <button class="btn" onclick="showMessage()">Click for a Surprise!</button>
+
+  <div class="message" id="birthdayMessage">
+    🎉 Happy Birthday to You! 🎂<br><br>
+
+    Today Your Birthday i will so happy for today because your my frd and Carring soul.💖<br> <br>
+
+    Enjoy Your freedom and keep smiles daily for your face and upgrade new year in this day God bless you "Love  You Kaviyaa "Chellameee " 💖". 🥳💫<br>
+
+    This is not for friendship 2month of Bond Travel in my Life. In this bond not End for Features. 🍰💖
+   
+  </div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById("birthdayMessage");
+      msg.style.display = "block";
+      msg.style.animation = "fadeIn 2s ease forwards";
+
+      // Create burst of hearts
+      for (let i = 0; i < 20; i++) {
+        createHeart(true);
+      }
+    }
+
+    function createHeart(burst = false) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+
+      const size = Math.random() * 10 + 10;
+      heart.style.width = `${size}px`;
+      heart.style.height = `${size}px`;
+
+      const left = Math.random() * 100;
+      heart.style.left = `${left}vw`;
+
+      const duration = Math.random() * 3 + 3;
+      heart.style.animationDuration = `${duration}s`;
+
+      if (burst) {
+        heart.style.top = "50%";
+        heart.style.left = `${50 + (Math.random() * 20 - 10)}vw`;
+        heart.style.animation = `float ${duration}s ease-out`;
+      }
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, duration * 1000);
+    }
+
+    // Continuous floating hearts
+    setInterval(() => createHeart(), 300);
+  </script>
+
+</body>
+</html>
