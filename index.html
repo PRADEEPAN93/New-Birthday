@@ -10,8 +10,9 @@
       padding: 0;
       background: rgb(192, 31, 57);
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      overflow: hidden;
       text-align: center;
+      height: fit-content;
+      /* overflow-x: hidden; */
     }
 
     h1 {
@@ -50,6 +51,7 @@
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      height:100vh;
     }
 
     @keyframes fadeIn {
@@ -107,24 +109,6 @@
       }
     }
   </style>
-</head>
-<body>
-
-  <h1>🎂 Happy Birthday! 🎉</h1>
-
-  <button class="btn" onclick="showMessage()">Click for a Surprise!</button>
-
-  <div class="message" id="birthdayMessage">
-    🎉 Happy Birthday to You! 🎂<br><br>
-
-    Today Your Birthday i will so happy for today because your my frd and Carring soul.💖<br> <br>
-
-    Enjoy Your freedom and keep smiles daily for your face and upgrade new year in this day God bless you "Love  You Kaviyaa "Chellameee " 💖". 🥳💫<br>
-
-    This is not for friendship 2month of Bond Travel in my Life. In this bond not End for Features. 🍰💖
-   
-  </div>
-
   <script>
     function showMessage() {
       const msg = document.getElementById("birthdayMessage");
@@ -140,6 +124,8 @@
     function createHeart(burst = false) {
       const heart = document.createElement("div");
       heart.classList.add("heart");
+
+      // const heart = document.getElementById("birthdayMessage");
 
       const size = Math.random() * 10 + 10;
       heart.style.width = `${size}px`;
@@ -167,6 +153,27 @@
     // Continuous floating hearts
     setInterval(() => createHeart(), 300);
   </script>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday! 🎉</h1>
+
+  <button class="btn" onclick="showMessage()">Click for a Surprise!</button>
+
+  <div class="message" id="birthdayMessage">
+    🎉 Happy Birthday to You! 🎂<br><br>
+
+
+    Today Your Birthday i will so happy for today because your my frd and Carring soul.💖<br> <br>
+
+    Enjoy Your freedom and keep smiles daily for your face and upgrade new year in this day God bless you "Love  You Kaviyaa "Chellameee " 💖". 🥳💫<br>
+
+    This is not for friendship 2month of Bond Travel in my Life. In this bond not End for Features. 🍰💖<br><br>
+    Once's Again "Many Many happy returns of the day "Kaviyaa broo" God bless you, Happy New Journey. 🍰"  
+   
+  </div>
+
+  
 
 </body>
 </html>
